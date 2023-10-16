@@ -35,6 +35,7 @@ jobs:
       uses: JasonEtco/create-an-issue@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ADJECTIVE: great
       with:
         filename: .github/ISSUE_TEMPLATE.md
   
@@ -45,7 +46,14 @@ jobs:
         junit_files: "report.xml"
     - name: create folder
       run: mkdir downloads
-    
+
+    - uses: JasonEtco/create-an-issue@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      id: create-issue
+    - run: 'echo Created issue number ${{ steps.create-issue.outputs.number }}'
+    - run: 'echo Created ${{ steps.create-issue.outputs.url }}'
+  
 
     - name: move files
       run: mv *.xml ./downloads
