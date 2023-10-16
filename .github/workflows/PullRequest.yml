@@ -21,7 +21,7 @@ jobs:
     - name: Checkout Own Repo
       uses: actions/checkout@v2
       with:
-        repository: lowkh/DevOps2022Demo
+        repository: explicitworkload/helloworld-python
 
     - name: list our contents
       run: |
