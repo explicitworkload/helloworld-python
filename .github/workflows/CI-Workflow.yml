@@ -26,7 +26,16 @@ jobs:
     - name: List Content from Repo
       run: |
         ls
-        
+
+    - name: Checkout Peer Repo
+      uses: actions/checkout@v2
+      with:
+        repository: explicitworkload/SFA_RUN2_GIT
+  
+    - name: List Content from Repo
+      run: |
+        ls
+
     - name: Start pytest Testing
       run: |
         pytest test.py -v -cov --junitxml=report.xml
