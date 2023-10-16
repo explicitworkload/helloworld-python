@@ -30,6 +30,7 @@ jobs:
   
     - name: List Content from Repo
       run: |
+        pwd
         ls
 
     - name: Start pytest Testing
