@@ -22,15 +22,11 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: explicitworkload/helloworld-python
-
-    - name: List Content from Repo
+    - name: get file
+      env:
+        TOKEN: ${{ secrets.GITHUB_TOKEN }} #secrets.repo_token
       run: |
-        ls
-
-    - name: Checkout Peer Repo
-      uses: actions/checkout@v2
-      with:
-        repository: explicitworkload/SFA_RUN2_GIT
+        curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/explicitworkload/helloworld-python/main/test.py
   
     - name: List Content from Repo
       run: |
