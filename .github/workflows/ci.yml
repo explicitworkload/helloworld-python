@@ -23,11 +23,11 @@ jobs:
       with:
         repository: explicitworkload/helloworld-python
 
-    - name: list our contents
+    - name: List Content from Repo
       run: |
         ls
         
-    - name: test with pytest
+    - name: Start pytest Testing
       run: |
         pytest test.py -v -cov --junitxml=report.xml
 
