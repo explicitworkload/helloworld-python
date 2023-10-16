@@ -6,24 +6,31 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
       with:
         python-version: 3.11
+
     - name: Install Libraries
       run: |
         pip install flake8 pytest pytest-cov
+
     - name: Checkout Own Repo
       uses: actions/checkout@v2
       with:
         repository: lowkh/DevOps2022Demo
+
     - name: list our contents
       run: |
         ls
+
     - name: test with pytest
       run: |
         pytest test.py -v -cov --junitxml=report.xml
+
     - if: ${{ failure() }}
       uses: JasonEtco/create-an-issue@v2
       env:
@@ -39,6 +46,7 @@ jobs:
     - name: create folder
       run: mkdir downloads
     
+
     - name: move files
       run: mv *.xml ./downloads
       
