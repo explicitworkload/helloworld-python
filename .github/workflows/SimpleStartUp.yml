@@ -25,7 +25,8 @@ jobs:
             repository: lowkh/hiddenRepo
             #path: <folder of choice>
             token: ${{ secrets.SECRET_TOKEN }}
-            
+
         - name: Show hidden files
           run: |
             ls -alch
+            cat README.md
