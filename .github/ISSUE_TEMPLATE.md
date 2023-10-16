@@ -3,4 +3,4 @@ title: Build Failed
 assignees: ${{ github.actor }}
 labels: bug
 ---
-Thanks for taking the time to fill out this bug report!
+This is a automated issue created due to failed build.
