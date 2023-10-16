@@ -2,6 +2,7 @@ name: Simple Start Up
 on:
     push:
         branches: [main]
+
 jobs:
     build:
 
