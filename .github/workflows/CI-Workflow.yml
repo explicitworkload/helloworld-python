@@ -22,7 +22,8 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: explicitworkload/helloworld-python
-    - name: get file
+
+    - name: Get TestScript from Remote Repository
       env:
         TOKEN: ${{ secrets.GITHUB_TOKEN }} #secrets.repo_token
       run: |
@@ -32,7 +33,7 @@ jobs:
       run: |
         pwd
         ls
-        ls -alch /home/runner/work/
+        ls -alch /home/runner/work/helloworld-python
 
     - name: Start pytest Testing
       run: |
