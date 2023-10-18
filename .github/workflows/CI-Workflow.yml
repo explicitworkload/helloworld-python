@@ -27,7 +27,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.GITHUB_TOKEN }} #secrets.repo_token
       run: |
-        curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/explicitworkload/SFA_RUN2_GIT/main/test_helloworld.py -o testetst.py
+        curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/explicitworkload/SFA_RUN2_GIT/main/test_helloworld.py -o test_helloworld.py
   
     - name: List Content from Repo
       run: |
