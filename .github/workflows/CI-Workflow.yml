@@ -36,7 +36,7 @@ jobs:
 
     - name: Start pytest Testing
       run: |
-        pytest testetst.py -v -cov --junitxml=report.xml
+        pytest test_helloworld.py -v -cov --junitxml=report.xml
 
     - if: ${{ failure() }}
       name: Create Issue on Failed workflow
